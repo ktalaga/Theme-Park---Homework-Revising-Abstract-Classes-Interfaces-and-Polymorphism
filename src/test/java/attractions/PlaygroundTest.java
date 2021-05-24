@@ -40,5 +40,6 @@ public class PlaygroundTest {
     public void canAllowToUseIfAgeOver15(){
         assertEquals(true, playground.isAllowedTo(visitor_1));
         assertEquals(false, playground.isAllowedTo(visitor_2));
+        assertEquals(false, playground.isAllowedTo(visitor_3));
     }
 }
