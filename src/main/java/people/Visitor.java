@@ -36,7 +36,7 @@ public class Visitor  {
         return visitedAttractions.size();
     }
 
-    public void addAttractionToVisitedAttractions(Attraction rollerCoaster){
+    public void addAttractionToVisitedAttractions(Attraction attraction){
         this.visitedAttractions.add(attraction);
     }
 

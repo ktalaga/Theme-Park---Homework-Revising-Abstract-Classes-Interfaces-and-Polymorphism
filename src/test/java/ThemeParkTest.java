@@ -3,6 +3,7 @@ import attractions.RollerCoaster;
 import behaviours.IReviewed;
 import org.junit.Before;
 import org.junit.Test;
+import people.Visitor;
 import stalls.CandyflossStall;
 import stalls.IceCreamStall;
 import stalls.ParkingSpot;
@@ -19,6 +20,7 @@ public class ThemeParkTest {
     private RollerCoaster rollerCoaster;
     private ThemePark themePark;
     private ArrayList<IReviewed> attractions;
+    private Visitor visitor;
 
     @Before
     public void before(){
@@ -32,6 +34,7 @@ public class ThemeParkTest {
         attractions.add(dodgems);
         attractions.add(rollerCoaster);
         themePark = new ThemePark(attractions);
+        visitor = new Visitor(14, 1.2, 40.0);
     }
 
     @Test
@@ -42,6 +45,13 @@ public class ThemeParkTest {
     @Test
     public void canReturnAnArrayListOfReviewedAttractions(){
         assertEquals(attractions, themePark.getAllReviewed());
+    }
+
+    @Test
+    public void whenVisiedAttractionAddedToVisitorListAndAttractionVisitCountIncreasesBy1(){
+        themePark.visit(visitor, dodgems);
+        assertEquals(1,visitor.getVisitedAttractions());
+        assertEquals(1,dodgems.getVisitCount());
     }
 
 
