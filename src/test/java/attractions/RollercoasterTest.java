@@ -43,4 +43,12 @@ public class RollercoasterTest {
         assertEquals(false, rollerCoaster.isAllowedTo(visitor_2));
         assertEquals(false, rollerCoaster.isAllowedTo(visitor_3));
     }
+
+    @Test
+    public void canChargeTwiceIfCustomerHeightOver200(){
+        assertEquals(16.80, rollerCoaster.priceFor(visitor_1), 0.00);
+        assertEquals(8.40, rollerCoaster.priceFor(visitor_2), 0.00);
+        assertEquals(8.40, rollerCoaster.priceFor(visitor_3), 0.00);
+    }
+
 }

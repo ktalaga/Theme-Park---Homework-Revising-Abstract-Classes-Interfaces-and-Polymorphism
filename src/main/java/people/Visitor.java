@@ -1,10 +1,8 @@
 package people;
 
-import behaviours.IReviewed;
-import behaviours.ISecurity;
-import behaviours.ITicketed;
 
-public class Visitor implements ITicketed, ISecurity, IReviewed {
+
+public class Visitor  {
 
     private int age;
     private double height;
@@ -29,25 +27,5 @@ public class Visitor implements ITicketed, ISecurity, IReviewed {
     }
 
 
-    public double defaultPrice() {
-        return 0;
-    }
 
-    public double priceFor(Visitor visitor) {
-        return 0;
-    }
-
-
-    public boolean isAllowedTo(Visitor visitor) {
-        return false;
-    }
-
-    public int getRating() {
-        return 0;
-    }
-
-
-    public String getName() {
-        return null;
-    }
 }
