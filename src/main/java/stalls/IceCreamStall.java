@@ -1,5 +1,7 @@
 package stalls;
 
+import people.Visitor;
+
 public class IceCreamStall extends Stall {
 
     public IceCreamStall(String name, String ownerName, ParkingSpot parkingSpot) {
@@ -9,5 +11,9 @@ public class IceCreamStall extends Stall {
 
     public int getRating() {
         return 0;
+    }
+
+    public boolean isAllowedTo(Visitor visitor) {
+        return true;
     }
 }

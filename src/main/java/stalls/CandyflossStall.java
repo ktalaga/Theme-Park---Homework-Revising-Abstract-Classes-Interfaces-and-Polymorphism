@@ -1,5 +1,7 @@
 package stalls;
 
+import people.Visitor;
+
 public class CandyflossStall extends Stall {
 
     public CandyflossStall(String name, String ownerName, ParkingSpot parkingSpot) {
@@ -9,5 +11,10 @@ public class CandyflossStall extends Stall {
 
     public int getRating() {
         return 0;
+    }
+
+
+    public boolean isAllowedTo(Visitor visitor) {
+        return true;
     }
 }

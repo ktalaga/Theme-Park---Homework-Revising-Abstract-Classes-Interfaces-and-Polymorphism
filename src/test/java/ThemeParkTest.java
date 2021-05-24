@@ -64,6 +64,14 @@ public class ThemeParkTest {
         testHashMap.put(rollerCoaster.getName(), rollerCoaster.getRating());
         assertEquals(testHashMap, themePark.returnHashMapOfAllReviews());
     }
+    @Test
+    public void canReturnArrayListOfAllowedAttractions(){
+        ArrayList<IReviewed> allowed = new ArrayList<>();
+        allowed.add(candyflossStall);
+        allowed.add(iceCreamStall);
+        allowed.add(dodgems);
 
+        assertEquals(allowed, themePark.getAllAllowedFor(visitor));
+    }
 
 }

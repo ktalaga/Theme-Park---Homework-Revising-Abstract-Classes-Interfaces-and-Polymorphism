@@ -18,6 +18,10 @@ public class ThemePark {
         return attractionsAndStalls.size();
     }
 
+    public ArrayList<IReviewed> getAttractionsAndStallsObjects() {
+        return attractionsAndStalls;
+    }
+
     public ArrayList<IReviewed> getAllReviewed(){
         ArrayList<IReviewed> reviewed = new ArrayList<>();
         for(IReviewed attraction : this.attractionsAndStalls){
@@ -36,5 +40,14 @@ public class ThemePark {
             allReviews.put(attraction.getName(), attraction.getRating());
         }
         return allReviews;
+    }
+
+    public ArrayList<IReviewed> getAllAllowedFor(Visitor visitor){
+        ArrayList<IReviewed> allowedAttractions = new ArrayList<>();
+        for(IReviewed attraction : getAttractionsAndStallsObjects()){
+            if(attraction.isAllowedTo(visitor) == true){
+                allowedAttractions.add(attraction);
+            }
+        }return allowedAttractions;
     }
 }
