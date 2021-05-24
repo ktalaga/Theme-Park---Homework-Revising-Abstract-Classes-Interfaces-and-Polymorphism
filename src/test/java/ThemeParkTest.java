@@ -9,6 +9,7 @@ import stalls.IceCreamStall;
 import stalls.ParkingSpot;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import static org.junit.Assert.assertEquals;
 
@@ -52,6 +53,16 @@ public class ThemeParkTest {
         themePark.visit(visitor, dodgems);
         assertEquals(1,visitor.getVisitedAttractions());
         assertEquals(1,dodgems.getVisitCount());
+    }
+
+    @Test
+    public void canReturnAHashMapOfReviews(){
+        HashMap<String, Integer> testHashMap = new HashMap<>();
+        testHashMap.put(candyflossStall.getName(), candyflossStall.getRating());
+        testHashMap.put(iceCreamStall.getName(), iceCreamStall.getRating());
+        testHashMap.put(dodgems.getName(), dodgems.getRating());
+        testHashMap.put(rollerCoaster.getName(), rollerCoaster.getRating());
+        assertEquals(testHashMap, themePark.returnHashMapOfAllReviews());
     }
 
 
