@@ -39,5 +39,10 @@ public class ThemeParkTest {
         assertEquals(4, themePark.getAttractionsAndStalls());
     }
 
+    @Test
+    public void canReturnAnArrayListOfReviewedAttractions(){
+        assertEquals(attractions, themePark.getAllReviewed());
+    }
+
 
 }

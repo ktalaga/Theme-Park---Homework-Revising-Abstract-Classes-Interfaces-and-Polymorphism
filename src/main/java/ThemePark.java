@@ -14,4 +14,11 @@ public class ThemePark {
     public int getAttractionsAndStalls() {
         return attractionsAndStalls.size();
     }
+
+    public ArrayList<IReviewed> getAllReviewed(){
+        ArrayList<IReviewed> reviewed = new ArrayList<>();
+        for(IReviewed attraction : this.attractionsAndStalls){
+            reviewed.add(attraction);
+        }return reviewed;
+    }
 }
